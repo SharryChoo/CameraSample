@@ -1,0 +1,3 @@
+rootProject.name='CameraSample'
+include ':app'
+include ':lib-scamera'

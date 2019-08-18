@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        multiDexEnabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    // androidx
+    api "androidx.constraintlayout:constraintlayout:$constraintLayout"
+    api "androidx.appcompat:appcompat:$supportLibraryVersion"
+    api "androidx.recyclerview:recyclerview:$supportLibraryVersion"
+    api "com.google.android.material:material:$supportLibraryVersion"
+    // my dependencies
+    api "com.github.SharryChoo:SToolbar:$sToolbarVersion"
+    api "com.github.SharryChoo:SLibrary:$sLibraryVersion"
+    // module dependencies
+    implementation project(':lib-scamera')
+}
