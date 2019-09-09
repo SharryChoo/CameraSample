@@ -204,6 +204,7 @@ public class SCameraView extends FrameLayout implements
             }
         } else {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+            return;
         }
         // Measure the PreviewView
         int width = getMeasuredWidth();
